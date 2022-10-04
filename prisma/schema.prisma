@@ -11,22 +11,31 @@ datasource db {
 }
 
 model User {
-  id       Int     @id @default(autoincrement())
-  username String  @unique
+  id       Int    @id @default(autoincrement())
+  username String @unique
   password String
-  sub      Int
-  kapal    Kapal[]
+}
+
+model Ship {
+  id       Int    @id @default(autoincrement())
+  ship     Kapal  @relation(fields: [brand], references: [brand])
+  brand    String
+  username String
 }
 
 model Kapal {
-  id        Int      @id @default(autoincrement())
-  brand     String   @unique
-  owner     User     @relation(fields: [ownerName], references: [username])
-  ownerName String
-  sensor    Sensor[]
+  id     Int       @id @default(autoincrement())
+  brand  String    @unique
+  fuel   Fuel[]
+  rpm    Rpm[]
+  temp   Temp[]
+  press  Press[]
+  vib    Vibrate[]
+  sensor Sense[]
+  ship   Ship[]
 }
 
-model Sensor {
+model Fuel {
   id       Int      @id @default(autoincrement())
   ship     Kapal    @relation(fields: [shipName], references: [brand])
   shipName String
@@ -35,12 +44,48 @@ model Sensor {
   stg      Int
   stt      Int
   srv      Int
+  updated  DateTime @default(now())
+}
+
+model Rpm {
+  id       Int      @id @default(autoincrement())
+  ship     Kapal    @relation(fields: [shipName], references: [brand])
+  shipName String
   rpm      Int
-  tempGas  Int
-  oilPress Int
-  engineVb Int
-  speed    Int
-  gps      Int
+  updated  DateTime @default(now())
+}
+
+model Temp {
+  id       Int      @id @default(autoincrement())
+  ship     Kapal    @relation(fields: [shipName], references: [brand])
+  shipName String
+  temp     Int
+  updated  DateTime @default(now())
+}
+
+model Press {
+  id       Int      @id @default(autoincrement())
+  ship     Kapal    @relation(fields: [shipName], references: [brand])
+  shipName String
+  press    Int
+  updated  DateTime @default(now())
+}
+
+model Vibrate {
+  id       Int      @id @default(autoincrement())
+  ship     Kapal    @relation(fields: [shipName], references: [brand])
+  shipName String
+  vib      Int
+  updated  DateTime @default(now())
+}
+
+model Sense {
+  id       Int      @id @default(autoincrement())
+  ship     Kapal    @relation(fields: [shipName], references: [brand])
+  shipName String
+  vib      Int
+  gps_n    Int
+  gps_w    Int
   distance BigInt
   updated  DateTime @default(now())
 }
