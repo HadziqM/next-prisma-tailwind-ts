@@ -1,23 +1,11 @@
 import * as React from "react";
-import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
-
-export async function getServerSideProps() {
-  const user = await prisma.user.findMany();
-  return {
-    props: { idk: user },
-  };
-}
 interface Test1Props {}
 interface Test1State {}
 class Test1 extends React.Component<Test1Props, Test1State> {
   data: any;
   interval: any;
-  constructor(props: any) {
-    super(props);
-    this.data = props.idk[0];
-  }
+
   state = { id: 0, username: "idk", password: "idk", sub: 0 };
 
   testing = () => {
@@ -32,7 +20,8 @@ class Test1 extends React.Component<Test1Props, Test1State> {
   async getData() {
     const res = await fetch("http://localhost:3000/api/hello");
     const user = await res.json();
-    console.log(user);
+    this.data = user;
+    this.testing();
   }
   componentDidMount() {
     this.interval = setInterval(() => this.getData(), 1000);
