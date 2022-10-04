@@ -27,8 +27,8 @@ model Kapal {
 }
 
 model Sensor {
-  id       Int    @id @default(autoincrement())
-  ship     Kapal  @relation(fields: [shipName], references: [brand])
+  id       Int      @id @default(autoincrement())
+  ship     Kapal    @relation(fields: [shipName], references: [brand])
   shipName String
   fuel     Int
   maxFuel  Int
@@ -42,4 +42,5 @@ model Sensor {
   speed    Int
   gps      Int
   distance BigInt
+  updated  DateTime @default(now())
 }
