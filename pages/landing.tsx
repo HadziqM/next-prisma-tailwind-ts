@@ -1,6 +1,7 @@
 import * as React from "react";
 import CustHead from "../components/header";
 import FooterITS from "../components/Puuter";
+import FuelMx from "../components/fuelmx";
 
 interface LandingProps {}
 
@@ -12,10 +13,13 @@ class Landing extends React.Component<LandingProps, LandingState> {
     return (
       <div>
         <CustHead />
+        <FuelMx fuel={this.fuel} maxfuel={this.maxfuel} />
         <FooterITS />
       </div>
     );
   }
+  maxfuel: number = 3500;
+  fuel: number = 2914;
 }
 
 export default Landing;
