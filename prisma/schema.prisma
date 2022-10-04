@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://postgres:suweseru@localhost/prisma"
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  username String  @unique
+  password String
+  sub      Int
+  kapal    Kapal[]
+}
+
+model Kapal {
+  id        Int      @id @default(autoincrement())
+  brand     String   @unique
+  owner     User     @relation(fields: [ownerName], references: [username])
+  ownerName String
+  sensor    Sensor[]
+}
+
+model Sensor {
+  id       Int    @id @default(autoincrement())
+  ship     Kapal  @relation(fields: [shipName], references: [brand])
+  shipName String
+  fuel     Int
+  maxFuel  Int
+  stg      Int
+  stt      Int
+  srv      Int
+  rpm      Int
+  tempGas  Int
+  oilPress Int
+  engineVb Int
+  speed    Int
+  gps      Int
+  distance BigInt
+}
