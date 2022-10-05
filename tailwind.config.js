@@ -7,8 +7,8 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      stroke: {
-        idk: "dasharray",
+      fontSize: {
+        vs: "0.5rem",
       },
     },
   },

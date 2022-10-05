@@ -24,9 +24,9 @@ class CustHead extends React.Component<CustHeadProps, CustHeadState> {
   }
   render() {
     return (
-      <div className="flex flex-col w-screen">
+      <div className="flex flex-col">
         <div className="flex justify-between  items-center p-4">
-          <img src="/logo.svg" className="max-w-xl max-h-16"></img>
+          <img src="/logo.svg" className="max-h-12"></img>
           <div>
             <p className="text-xs">
               {this.state.date} | {this.state.time}
