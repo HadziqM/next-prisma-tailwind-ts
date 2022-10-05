@@ -26,14 +26,14 @@ class Landing extends React.Component<LandingProps, LandingState> {
       </div>
     );
   }
-  rpm: number = 821;
+  rpm: number = 1900;
   maxrpm: number = 2000;
   maxfuel: number = 3500;
-  fuel: number = 2914;
-  speed: number = 10;
-  degree = 200;
-  slantx = 20;
-  slanty = 10;
+  fuel: number = 1294;
+  speed: number = 6;
+  degree = 100;
+  slantx = -10;
+  slanty = 5;
 }
 
 export default Landing;

@@ -47,15 +47,11 @@ class Graph extends React.Component<GraphProps, GraphState> {
     return [
       ["Seconds", "RPM"],
       ["0", 50],
-      ["5", 58],
       ["10", 51],
-      ["15", 52],
       ["20", 70],
       ["30", 30],
       ["40", 90],
-      ["45", 70],
       ["50", 90],
-      ["55", 50],
       ["60", 30],
     ];
   }
@@ -69,6 +65,7 @@ class Graph extends React.Component<GraphProps, GraphState> {
       },
       chartArea: { width: "80%", height: "70%" },
       backgroundColor: "rgb(31,41,55)",
+      colors: ["#fff"],
     };
   };
 }

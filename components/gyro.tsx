@@ -37,12 +37,12 @@ class Gyro extends React.Component<GyroProps, GyroState> {
   }
   getSlantX() {
     return {
-      translate: "rotate(" + this.props.slantX + "deg)",
+      transform: "rotate(" + this.props.slantX + "deg)",
     };
   }
   getSlantY() {
     return {
-      translate: "rotate(" + this.props.slantY + "deg)",
+      transform: "rotate(" + this.props.slantY + "deg)",
     };
   }
 }
