@@ -3,9 +3,10 @@ import CustHead from "../components/header";
 import FooterITS from "../components/Puuter";
 import FuelMx from "../components/fuelmx";
 import Rpm from "../components/rpmbox";
-import Graph from "../components/framechart";
+import GraphGps from "../components/framechart";
 import Compas from "../components//compas";
 import Gyro from "../components/gyro";
+import Gps from "../components/gps";
 
 interface LandingProps {}
 
@@ -21,7 +22,8 @@ class Landing extends React.Component<LandingProps, LandingState> {
         <Rpm maxrpm={this.maxrpm} rpm={this.rpm} />
         <Compas speed={this.speed} degree={this.degree} />
         <Gyro slantX={this.slantx} slantY={this.slanty} />
-        <Graph />
+        <Gps gpsn="6.4231231" gpsw="119.124331" />
+        <GraphGps />
         <FooterITS />
       </div>
     );

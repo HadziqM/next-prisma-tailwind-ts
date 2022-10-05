@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Chart } from "react-google-charts";
 
-interface GraphGpsProps {}
+interface GraphOilProps {}
 
-interface GraphGpsState {}
+interface GraphOilState {}
 
-class GraphGps extends React.Component<GraphGpsProps, GraphGpsState> {
+class GraphOil extends React.Component<GraphOilProps, GraphOilState> {
   data1: any;
   interval: any;
   render() {
@@ -57,7 +57,7 @@ class GraphGps extends React.Component<GraphGpsProps, GraphGpsState> {
   }
   anjir = () => {
     return {
-      title: "RPM",
+      title: "Oil",
       titleTextStyle: { color: "#fff" },
       vAxis: { minValue: 0, textStyle: { color: "#fff" } },
       hAxis: {
@@ -65,9 +65,9 @@ class GraphGps extends React.Component<GraphGpsProps, GraphGpsState> {
       },
       chartArea: { width: "80%", height: "70%" },
       backgroundColor: "rgb(31,41,55)",
-      colors: ["#fff"],
+      colors: ["#ff0"],
     };
   };
 }
 
-export default GraphGps;
+export default GraphOil;
