@@ -16,8 +16,10 @@ class FuelMx extends React.Component<FuelMxProps, FuelMxState> {
           <h2 className="text-center text-lg font-bold">{this.fuel()}</h2>
           <p className="text-xs">Liter</p>
         </div>
-        <div className="rounded-lg h-40 w-28 flex flex-col justify-between bg-gray-800 item-center">
-          <p className="text-xs text-center py-1">Max {this.maxfuel()} KL</p>
+        <div className="rounded-lg h-40 w-28 flex flex-col justify-end bg-gray-800 item-center relative">
+          <p className="text-xs text-center py-1 absolute top-0 w-full">
+            Max {this.maxfuel()} KL
+          </p>
           <div
             className="bg-blue-400 w-full rounded-lg"
             style={this.fuelbar()}

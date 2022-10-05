@@ -14,7 +14,7 @@ class Oil extends React.Component<OilProps, OilState> {
         <div className="rounded-lg h-40 w-28 flex flex-col justify-between bg-gray-800 p-1">
           <p className="text-xs">oil</p>
           <h2 className="text-center text-lg font-bold">{this.props.oil}</h2>
-          <p className="text-xs">0</p>
+          <p className="text-xs">Psi</p>
         </div>
         <div className="rounded-lg h-40 w-28 flex flex-col justify-between bg-gray-800 item-center">
           <p className="text-xs text-center py-1">Max {this.props.maxoil}</p>
@@ -27,7 +27,7 @@ class Oil extends React.Component<OilProps, OilState> {
               cx={45}
               cy={45}
               r={45}
-              className="stroke-red-700"
+              className="stroke-yellow-400"
               style={this.style()}
             ></circle>
           </svg>

@@ -14,7 +14,7 @@ class Engine extends React.Component<EngineProps, EngineState> {
         <div className="rounded-lg h-40 w-28 flex flex-col justify-between bg-gray-800 p-1">
           <p className="text-xs">engine</p>
           <h2 className="text-center text-lg font-bold">{this.props.engine}</h2>
-          <p className="text-xs">0</p>
+          <p className="text-xs">Khz mm/s</p>
         </div>
         <div className="rounded-lg h-40 w-28 flex flex-col justify-between bg-gray-800 item-center">
           <p className="text-xs text-center py-1">Max {this.props.maxengine}</p>
@@ -27,7 +27,7 @@ class Engine extends React.Component<EngineProps, EngineState> {
               cx={45}
               cy={45}
               r={45}
-              className="stroke-red-700"
+              className="stroke-orange-700"
               style={this.style()}
             ></circle>
           </svg>

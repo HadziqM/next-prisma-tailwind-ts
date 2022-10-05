@@ -15,7 +15,7 @@ class GraphOil extends React.Component<GraphOilProps, GraphOilState> {
         <Chart
           chartType="AreaChart"
           width="100%"
-          height="160px"
+          height="100%"
           data={this.data()}
           options={this.anjir()}
         />
