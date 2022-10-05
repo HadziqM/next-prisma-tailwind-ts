@@ -6,7 +6,11 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      stroke: {
+        idk: "dasharray",
+      },
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };

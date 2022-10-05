@@ -18,7 +18,7 @@ class Test1 extends React.Component<Test1Props, Test1State> {
     });
   };
   async getData() {
-    const res = await fetch("http://localhost:3000/api/hello");
+    const res = await fetch("/api/hello");
     const user = await res.json();
     this.data = user;
     this.testing();
