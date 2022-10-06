@@ -7,6 +7,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      width: {
+        s9: "99%",
+      },
       fontSize: {
         vs: "0.5rem",
       },
