@@ -14,7 +14,7 @@ interface FuelScState {}
 class FuelSc extends React.Component<FuelScProps, FuelScState> {
   render() {
     return (
-      <div className="bg-black text-white flex w-60 h-44 justify-center items-center gap-2 m-2">
+      <div className="bg-black text-white flex w-60 h-44 justify-center items-center gap-2">
         <div className="rounded-lg h-40 w-16 flex flex-col justify-end bg-gray-800 item-center relative">
           <p className="text-xs text-center py-1 absolute w-full top-0">STG</p>
           <p className="text-xs text-center py-1 absolute top-4 w-full">

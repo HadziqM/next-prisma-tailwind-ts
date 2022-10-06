@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Chart } from "react-google-charts";
 
-interface GraphOilProps {}
+interface GraphFuelProps {}
 
-interface GraphOilState {}
+interface GraphFuelState {}
 
-class GraphOil extends React.Component<GraphOilProps, GraphOilState> {
+class GraphFuel extends React.Component<GraphFuelProps, GraphFuelState> {
   data1: any;
   interval: any;
   render() {
@@ -45,7 +45,7 @@ class GraphOil extends React.Component<GraphOilProps, GraphOilState> {
   //   }
   data() {
     return [
-      ["Seconds", "RPM"],
+      ["Seconds", "Fuel"],
       ["0", 50],
       ["10", 51],
       ["20", 70],
@@ -57,7 +57,7 @@ class GraphOil extends React.Component<GraphOilProps, GraphOilState> {
   }
   anjir = () => {
     return {
-      title: "Oil",
+      title: "Fuel",
       titleTextStyle: { color: "#fff" },
       vAxis: { minValue: 0, textStyle: { color: "#fff" } },
       hAxis: {
@@ -65,9 +65,9 @@ class GraphOil extends React.Component<GraphOilProps, GraphOilState> {
       },
       chartArea: { width: "80%", height: "70%" },
       backgroundColor: "rgb(31,41,55)",
-      colors: ["#ff0"],
+      colors: ["#aaf"],
     };
   };
 }
 
-export default GraphOil;
+export default GraphFuel;

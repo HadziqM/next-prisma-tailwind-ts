@@ -11,7 +11,7 @@ class Landing extends React.Component<LandingProps, LandingState> {
   state = {};
   render() {
     return (
-      <div>
+      <div className="flex flex-col item-center justify-center">
         <CustHead />
         <ShipLayer />
         <FooterITS />

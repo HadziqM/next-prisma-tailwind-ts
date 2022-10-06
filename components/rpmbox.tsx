@@ -10,7 +10,7 @@ interface RpmState {}
 class Rpm extends React.Component<RpmProps, RpmState> {
   render() {
     return (
-      <div className="bg-black text-white flex w-60 h-44 justify-center items-center gap-2 m-2">
+      <div className="bg-black text-white flex w-60 h-44 justify-center items-center m-0">
         <div className="rounded-lg h-40 w-28 flex flex-col justify-between bg-gray-800 p-1">
           <p className="text-xs">Rpm</p>
           <h2 className="text-center text-lg font-bold">{this.props.rpm}</h2>

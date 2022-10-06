@@ -11,7 +11,7 @@ class Gyro extends React.Component<GyroProps, GyroState> {
   state = {};
   render() {
     return (
-      <div className="bg-black text-white flex w-60 h-44 justify-center items-center gap-2 m-2">
+      <div className="bg-black text-white flex w-60 h-44 justify-center items-center gap-2">
         <div className="rounded-lg h-40 w-28 flex flex-col justify-between bg-gray-800 item-center">
           <p className="text-xs text-center py-1">Slant Y</p>
           <div className="flex border-white border mx-2 mb-2 h-32 justify-center items-center test">

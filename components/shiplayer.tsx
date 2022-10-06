@@ -13,6 +13,7 @@ import GraphOil from "./oilchart";
 import Oil from "./oilpress";
 import GraphTemp from "./tempchart";
 import Temp from "./tempgas";
+import GraphFuel from "./fuelchart";
 
 interface ShipLayerProps {}
 
@@ -22,28 +23,31 @@ class ShipLayer extends React.Component<ShipLayerProps, ShipLayerState> {
   state = {};
   render() {
     return (
-      <div>
-        <FuelMx fuel={this.fuel} maxfuel={this.maxfuel} />
-        <FuelSc
-          stg={this.stg}
-          stt={this.stt}
-          srv={this.srv}
-          stgmax={this.stgmax}
-          sttmax={this.sttmax}
-          srvmax={this.srvmax}
-        />
-        <Distance distance={this.distance} />
-        <Engine engine={this.engine} maxengine={this.maxengine} />
-        <Oil oil={this.oil} maxoil={this.maxoil} />
-        <Temp Temp={this.temp} maxTemp={this.maxtemp} />
-        <Rpm maxrpm={this.maxrpm} rpm={this.rpm} />
-        <Compas speed={this.speed} degree={this.degree} />
-        <Gyro slantX={this.slantx} slantY={this.slanty} />
-        <Gps gpsn="6.4231231" gpsw="119.124331" />
-        <GraphGps />
-        <GraphEngine />
-        <GraphOil />
-        <GraphTemp />
+      <div className="w-full flex justify-center items-center">
+        <div className="w-4/5 grid grid-rows-6 grid-flow-col gap-2">
+          <FuelMx fuel={this.fuel} maxfuel={this.maxfuel} />
+          <FuelSc
+            stg={this.stg}
+            stt={this.stt}
+            srv={this.srv}
+            stgmax={this.stgmax}
+            sttmax={this.sttmax}
+            srvmax={this.srvmax}
+          />
+          <Distance distance={this.distance} />
+          <Engine engine={this.engine} maxengine={this.maxengine} />
+          <Oil oil={this.oil} maxoil={this.maxoil} />
+          <Temp Temp={this.temp} maxTemp={this.maxtemp} />
+          <Rpm maxrpm={this.maxrpm} rpm={this.rpm} />
+          <Compas speed={this.speed} degree={this.degree} />
+          <Gyro slantX={this.slantx} slantY={this.slanty} />
+          <Gps gpsn="10.4231231" gpsw="19.124331" />
+          <GraphGps />
+          <GraphEngine />
+          <GraphOil />
+          <GraphTemp />
+          <GraphFuel />
+        </div>
       </div>
     );
   }
@@ -63,7 +67,7 @@ class ShipLayer extends React.Component<ShipLayerProps, ShipLayerState> {
   rpm = 1900;
   maxrpm = 2000;
   maxfuel = 3500;
-  fuel = 1500;
+  fuel = 2224;
   speed = 6;
   degree = 100;
   slantx = 20;
