@@ -18,29 +18,20 @@ class Engine extends React.Component<EngineProps, EngineState> {
         </div>
         <div className="rounded-lg h-40 w-28 flex flex-col justify-between bg-gray-800 item-center">
           <p className="text-xs text-center py-1">Max {this.props.maxengine}</p>
-          <h1 className="absolute translate-y-16 translate-x-10 font-bold text-xl">
+          <div
+            className="radial-progress translate-x-4 -translate-y-4 text-yellow-200"
+            style={this.style() as React.CSSProperties}
+          >
             {this.percent()} %
-          </h1>
-          <svg className="translate-x-3 translate-y-3 fill-transparent stroke-black stroke-2 w-full h-full overflow-visible">
-            <circle cx={45} cy={45} r={45}></circle>
-            <circle
-              cx={45}
-              cy={45}
-              r={45}
-              className="stroke-orange-700"
-              style={this.style()}
-            ></circle>
-          </svg>
+          </div>
         </div>
       </div>
     );
   }
   style() {
-    const stroke =
-      ((this.props.maxengine - this.props.engine) / this.props.maxengine) * 290;
+    const stroke = Math.round((this.props.engine / this.props.maxengine) * 100);
     return {
-      "stroke-dasharray": 290,
-      "stroke-dashoffset": stroke,
+      "--value": stroke,
     };
   }
   percent() {
