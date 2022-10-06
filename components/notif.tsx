@@ -7,7 +7,7 @@ interface NotifState {}
 class Notif extends React.Component<NotifProps, NotifState> {
   state = {};
   render() {
-    return <div className="flex w-full h-full bg-black row-span-2"></div>;
+    return <div className="flex w-full h-s9 bg-black row-span-2"></div>;
   }
 }
 

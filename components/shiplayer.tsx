@@ -25,33 +25,31 @@ class ShipLayer extends React.Component<ShipLayerProps, ShipLayerState> {
   state = {};
   render() {
     return (
-      <div className="w-full flex justify-center items-center my-2">
-        <div className="w-4/5 grid grid-rows-6 grid-flow-col gap-2">
-          <FuelMx fuel={this.fuel} maxfuel={this.maxfuel} />
-          <FuelSc
-            stg={this.stg}
-            stt={this.stt}
-            srv={this.srv}
-            stgmax={this.stgmax}
-            sttmax={this.sttmax}
-            srvmax={this.srvmax}
-          />
-          <Rpm maxrpm={this.maxrpm} rpm={this.rpm} />
-          <Temp Temp={this.temp} maxTemp={this.maxtemp} />
-          <Oil oil={this.oil} maxoil={this.maxoil} />
-          <Engine engine={this.engine} maxengine={this.maxengine} />
-          <GraphFuel />
-          <GraphGps />
-          <GraphTemp />
-          <GraphOil />
-          <GraphEngine />
-          <Compas speed={this.speed} degree={this.degree} />
-          <Gyro slantX={this.slantx} slantY={this.slanty} />
-          <Gps gpsn="10.4231231" gpsw="19.124331" />
-          <Distance distance={this.distance} />
-          <Notif />
-          <Status />
-        </div>
+      <div className="w-4/5 grid grid-rows-6 grid-flow-col gap-2">
+        <FuelMx fuel={this.fuel} maxfuel={this.maxfuel} />
+        <FuelSc
+          stg={this.stg}
+          stt={this.stt}
+          srv={this.srv}
+          stgmax={this.stgmax}
+          sttmax={this.sttmax}
+          srvmax={this.srvmax}
+        />
+        <Rpm maxrpm={this.maxrpm} rpm={this.rpm} />
+        <Temp Temp={this.temp} maxTemp={this.maxtemp} />
+        <Oil oil={this.oil} maxoil={this.maxoil} />
+        <Engine engine={this.engine} maxengine={this.maxengine} />
+        <GraphFuel />
+        <GraphGps />
+        <GraphTemp />
+        <GraphOil />
+        <GraphEngine />
+        <Compas speed={this.speed} degree={this.degree} />
+        <Gyro slantX={this.slantx} slantY={this.slanty} />
+        <Gps gpsn="10.4231231" gpsw="19.124331" />
+        <Distance distance={this.distance} />
+        <Notif />
+        <Status />
       </div>
     );
   }

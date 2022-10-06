@@ -7,6 +7,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      height: {
+        s9: "96%",
+      },
       width: {
         s9: "99%",
       },

@@ -10,7 +10,7 @@ class GraphOil extends React.Component<GraphOilProps, GraphOilState> {
   interval: any;
   render() {
     return (
-      <div className="text-white flex w-96 h-44 justify-center items-center gap-2 bg-gray-800 flex-col pt-4">
+      <div className="text-white flex w-80 h-44 justify-center items-center gap-2 bg-gray-800 flex-col pt-4">
         <h2>Frame Rate</h2>
         <Chart
           chartType="AreaChart"
