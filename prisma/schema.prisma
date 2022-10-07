@@ -24,68 +24,49 @@ model Ship {
 }
 
 model Kapal {
-  id     Int       @id @default(autoincrement())
-  brand  String    @unique
-  fuel   Fuel[]
-  rpm    Rpm[]
-  temp   Temp[]
-  press  Press[]
-  vib    Vibrate[]
-  sensor Sense[]
-  ship   Ship[]
-}
-
-model Fuel {
-  id       Int      @id @default(autoincrement())
-  ship     Kapal    @relation(fields: [shipName], references: [brand])
-  shipName String
-  fuel     Int
-  maxFuel  Int
-  stg      Int
-  stt      Int
-  srv      Int
-  updated  DateTime @default(now())
-}
-
-model Rpm {
-  id       Int      @id @default(autoincrement())
-  ship     Kapal    @relation(fields: [shipName], references: [brand])
-  shipName String
-  rpm      Int
-  updated  DateTime @default(now())
-}
-
-model Temp {
-  id       Int      @id @default(autoincrement())
-  ship     Kapal    @relation(fields: [shipName], references: [brand])
-  shipName String
-  temp     Int
-  updated  DateTime @default(now())
-}
-
-model Press {
-  id       Int      @id @default(autoincrement())
-  ship     Kapal    @relation(fields: [shipName], references: [brand])
-  shipName String
-  press    Int
-  updated  DateTime @default(now())
-}
-
-model Vibrate {
-  id       Int      @id @default(autoincrement())
-  ship     Kapal    @relation(fields: [shipName], references: [brand])
-  shipName String
-  vib      Int
-  updated  DateTime @default(now())
+  id      Int     @id @default(autoincrement())
+  brand   String  @unique
+  maxFuel Int     @default(3500)
+  maxStg  Int     @default(2000)
+  maxStt  Int     @default(1000)
+  maxSrv  Int     @default(500)
+  maxRpm  Int     @default(5000)
+  maxOil  Int     @default(400)
+  maxTemp Int     @default(1000)
+  maxVib  Int     @default(1000)
+  sensor  Sense[]
+  ship    Ship[]
 }
 
 model Sense {
-  id       Int      @id @default(autoincrement())
-  ship     Kapal    @relation(fields: [shipName], references: [brand])
-  shipName String
-  vib      Int
-  gps_n    Int
-  gps_w    Int
-  distance BigInt
-  updated  DateTime @default(now())
+  id         Int      @id @default(autoincrement())
+  ship       Kapal    @relation(fields: [shipName], references: [brand])
+  shipName   String
+  gps_n      Int
+  gps_w      Int
+  distance   BigInt
+  fuel       Int
+  stg        Int
+  stt        Int
+  srv        Int
+  oil        Int
+  temp       Int
+  rpm        Int
+  vib        Int
+  slantX     Int
+  slantY     Int
+  speed      Int
+  gsm        Boolean  @default(false)
+  internet   Boolean  @default(true)
+  satelit    Boolean  @default(false)
+  flow       Boolean  @default(true)
+  level      Boolean  @default(true)
+  rpmSense   Boolean  @default(true)
+  vibSense   Boolean  @default(true)
+  oilSense   Boolean  @default(true)
+  tempSense  Boolean  @default(true)
+  slantSense Boolean  @default(true)
+  gps        Boolean  @default(true)
+  camera     Boolean  @default(true)
+  updated    DateTime @default(now())
 }

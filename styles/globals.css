@@ -20,7 +20,9 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   background: #6666ff;
 }
-
+.status p {
+  font-size: 0.75rem;
+}
 * {
   box-sizing: border-box;
 }

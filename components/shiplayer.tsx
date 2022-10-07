@@ -49,7 +49,7 @@ class ShipLayer extends React.Component<ShipLayerProps, ShipLayerState> {
         <Gps gpsn="10.4231231" gpsw="19.124331" />
         <Distance distance={this.distance} />
         <Notif />
-        <Status />
+        <Status oil={true} />
       </div>
     );
   }
