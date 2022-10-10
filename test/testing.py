@@ -1,40 +1,75 @@
-from psql import *
+from base import *
+import random
 import asyncio
 
 
-def convert(fetchall):
-    c = [fetchall[i][0] for i in range(len(fetchall))]
-    return c
+def rand_asc(num, range: int):
+    li = [range, 0]
+    a = random.choices(li)
+    return num + a[0]
 
 
-def numb(val):
-    if (val == None or val == 'None'):
-        return 0
-    else:
-        return val
+def rand_desc(num, range: int):
+    li = [-range, 0]
+    a = random.choices(li)
+    return num + a[0]
 
 
-class basicpg:
+def rand_cmp(num, range: int):
+    li = [-range, 0, range]
+    a = random.choices(li)
+    return num + a[0]
+
+
+def rand_float(num):
+    li = [0.00001, 0, -0.00001]
+    a = random.choices(li)
+    return num + a[0]
+
+
+class getwtf:
     def __init__(self):
-        self.param = config('postgresql')
+        self.gps_n = 4.12321
+        self.gps_w = 129.02311
+        self.fuel = 3000
+        self.stg = 1500
+        self.stt = 1000
+        self.srv = 500
+        self.oil = 1000
+        self.temp = 70
+        self.rpm = 200
+        self.vib = 2000
+        self.slantx = 10
+        self.slanty = -10
+        self.speed = 3
+        self.distance = 4
 
-    async def get(self, table, row, sort=None, condition_c=None, condition_v=None):
-        conn = await asyncpg.connect(user='postgres', password='suweseru',
-                                     database='prisma', host='127.0.0.1')
-        if condition_c:
-            sql = f"select {row} from {table} where {condition_c}={condition_v}"
-            res = await conn.fetchval(sql)
-        else:
-            if sort:
-                sql = f"select {row} from {table} sort by {sort} descend"
-            else:
-                sql = f"SELECT * FROM {table}"
-            res = await conn.fetch(sql)
-        await conn.close()
-        return res
+    async def one_row(self):
+        self.gps_n = rand_float(self.gps_n)
+        self.gps_w = rand_float(self.gps_w)
+        self.fuel = rand_desc(self.fuel, 3)
+        self.stg = rand_desc(self.stg, 1)
+        self.stt = rand_desc(self.stt, 1)
+        self.srv = rand_desc(self.srv, 1)
+        self.oil = rand_cmp(self.oil, 5)
+        self.temp = rand_cmp(self.temp, 1)
+        self.rpm = rand_cmp(self.rpm, 10)
+        self.vib = rand_cmp(self.vib, 100)
+        self.slantx = rand_cmp(self.slantx, 5)
+        self.slanty = rand_cmp(self.slanty, 5)
+        self.speed = rand_cmp(self.speed, 1)
+        self.distance = rand_asc(self.distance, 1)
+        row = ["shipname", "gps_n", "gps_w", "fuel", "stg", "stt", "srv", "oil",
+               "rpm", "vib", "temp", "slantx", "slanty", "speed", "distance"]
+        val = ["KM Jawa", self.gps_n, self.gps_w, self.fuel, self.stg, self.stt, self.srv, self.oil,
+               self.rpm, self.vib, self.temp, self.slantx, self.slanty, self.speed, self.distance]
+        await basicpg().new_row("senses", row, val)
 
 
-loop = asyncio.get_event_loop()
-a = loop.run_until_complete(basicpg().get("users", "id"))
-print(a)
-a[0].username
+async def main():
+    test = getwtf()
+    for i in range(5):
+        await test.one_row()
+
+
+asyncio.run(main())

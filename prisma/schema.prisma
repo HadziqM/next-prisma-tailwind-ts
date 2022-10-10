@@ -18,32 +18,32 @@ model users {
 
 model ships {
   id       Int    @id @default(autoincrement())
-  ship     kapals  @relation(fields: [brand], references: [brand])
+  ship     kapals @relation(fields: [brand], references: [brand])
   brand    String
   username String
 }
 
 model kapals {
-  id      Int     @id @default(autoincrement())
-  brand   String  @unique
-  maxFuel Int     @default(3500)
-  maxStg  Int     @default(2000)
-  maxStt  Int     @default(1000)
-  maxSrv  Int     @default(500)
-  maxRpm  Int     @default(5000)
-  maxOil  Int     @default(400)
-  maxTemp Int     @default(1000)
-  maxVib  Int     @default(1000)
+  id      Int      @id @default(autoincrement())
+  brand   String   @unique
+  maxfuel Int      @default(3500)
+  maxstg  Int      @default(2000)
+  maxstt  Int      @default(1000)
+  maxsrv  Int      @default(500)
+  maxrpm  Int      @default(5000)
+  maxoil  Int      @default(400)
+  maxtemp Int      @default(1000)
+  maxvib  Int      @default(1000)
   sensor  senses[]
   ship    ships[]
 }
 
 model senses {
   id         Int      @id @default(autoincrement())
-  ship       kapals    @relation(fields: [shipName], references: [brand])
-  shipName   String
-  gps_n      Int
-  gps_w      Int
+  ship       kapals   @relation(fields: [shipname], references: [brand])
+  shipname   String
+  gps_n      Float
+  gps_w      Float
   distance   BigInt
   fuel       Int
   stg        Int
@@ -53,19 +53,19 @@ model senses {
   temp       Int
   rpm        Int
   vib        Int
-  slantX     Int
-  slantY     Int
+  slantx     Int
+  slanty     Int
   speed      Int
   gsm        Boolean  @default(false)
   internet   Boolean  @default(true)
   satelit    Boolean  @default(false)
   flow       Boolean  @default(true)
   level      Boolean  @default(true)
-  rpmSense   Boolean  @default(true)
-  vibSense   Boolean  @default(true)
-  oilSense   Boolean  @default(true)
-  tempSense  Boolean  @default(true)
-  slantSense Boolean  @default(true)
+  rpmsense   Boolean  @default(true)
+  vibsense   Boolean  @default(true)
+  oilsense   Boolean  @default(true)
+  tempsense  Boolean  @default(true)
+  slantsense Boolean  @default(true)
   gps        Boolean  @default(true)
   camera     Boolean  @default(true)
   updated    DateTime @default(now())
