@@ -9,9 +9,11 @@ module.exports = {
     extend: {
       height: {
         s9: "100%",
+        res: "15vw",
       },
       width: {
         s9: "99%",
+        res: "20vw",
       },
       fontSize: {
         vs: "0.5rem",

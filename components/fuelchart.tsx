@@ -45,27 +45,28 @@ class GraphFuel extends React.Component<GraphFuelProps, GraphFuelState> {
   //   }
   data() {
     return [
-      ["Seconds", "Fuel"],
-      ["0", 50],
-      ["10", 51],
-      ["20", 70],
-      ["30", 30],
-      ["40", 90],
-      ["50", 90],
-      ["60", 30],
+      ["Seconds", "Fuel", "STG", "STT", "SRV"],
+      ["0", 50, 34, 12, 32],
+      ["10", 51, 12, 34, 21],
+      ["20", 70, 23, 45, 12],
+      ["30", 30, 12, 3, 4],
+      ["40", 90, 1, 2, 3],
+      ["50", 90, 34, 21, 31],
+      ["60", 30, 12, 34, 32],
     ];
   }
   anjir = () => {
     return {
       title: "Fuel",
+      legend: { textStyle: { color: "#fff" } },
       titleTextStyle: { color: "#fff" },
       vAxis: { minValue: 0, textStyle: { color: "#fff" } },
       hAxis: {
         textStyle: { color: "#fff" },
       },
-      chartArea: { width: "80%", height: "70%" },
+      chartArea: { width: "75%", height: "70%" },
       backgroundColor: "rgb(31,41,55)",
-      colors: ["#aaf"],
+      colors: ["#aaf", "0aa", "a0a", "aa0"],
     };
   };
 }
