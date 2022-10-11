@@ -12,6 +12,18 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const user = await prisma.user.findMany();
-  res.status(200).json({user : user[0]})
+  const ships: any = await prisma.ships.findMany({
+    where: {
+      username: "hertz",
+    },
+  });
+  const spec: any =await Promise.all(ships.map(
+    async (e: any) =>
+     await prisma.kapals.findUnique({
+      where:{
+        brand:e.brand
+      }
+    })
+  ))
+  res.status(200).json({user : spec})
 }

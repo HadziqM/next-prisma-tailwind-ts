@@ -1,7 +1,6 @@
 import * as React from "react";
 import CustHead from "../components/header";
 import FooterITS from "../components/Puuter";
-import ShipLayer from "../components/shiplayer";
 import ShipMount from "../components/shipmount";
 
 interface LandingProps {}

@@ -16,13 +16,16 @@ import Temp from "./tempgas";
 import GraphFuel from "./fuelchart";
 import Status from "./status";
 import Notif from "./notif";
+
 interface ShipMountProps {}
-
 interface ShipMountState {}
-
 class ShipMount extends React.Component<ShipMountProps, ShipMountState> {
-  state = {};
+  state = { test: "x" };
+  damn = async () => {
+    return await (await fetch("/api/hello")).json();
+  };
   render() {
+    console.log(this.damn);
     return (
       <div className="flex justify-center items-center">
         <div className="flex flex-col justify-center item-center my-2 w-4/5">
