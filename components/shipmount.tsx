@@ -21,9 +21,14 @@ interface ShipMountProps {}
 interface ShipMountState {}
 class ShipMount extends React.Component<ShipMountProps, ShipMountState> {
   state = { test: "x" };
-  damn = async () => {
+  async damn() {
     return await (await fetch("/api/hello")).json();
-  };
+  }
+  idk: any;
+  async componentDidMount(): Promise<void> {
+    this.idk = await this.damn();
+    console.log(this.idk);
+  }
   render() {
     console.log(this.damn);
     return (
